@@ -139,7 +139,8 @@ section {
 
 .about,
 .services,
-.skills {
+.skills,
+.teams {
   font-family: "Poppins", sans-serif;
 }
 
@@ -238,14 +239,17 @@ section .title::after {
 
 /* SERVICES SECTION START  */
 
-.services {
+.services,
+.teams {
   color: #fff;
   background: #111;
 }
-.services .title::before {
+.services .title::before,
+.teams .title::before {
   background: #fff;
 }
-.services .title::after {
+.services .title::after,
+.teams .title::after {
   background: #111;
   content: "what i provide";
 }
@@ -373,6 +377,56 @@ section .title::after {
   width: 70%;
 }
 /* SKILLS SECTION END  */
+
+/* TEAMS SECTION START  */
+
+.teams .title::after {
+  content: "who with me";
+}
+
+.teams .carousel .card {
+  background: #222;
+  border-radius: 6px;
+  padding: 25px 35px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.teams .carousel .card:hover {
+  background: crimson;
+}
+
+.teams .carousel .card .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.teams .carousel .card:hover .box {
+  transform: scale(1.05);
+}
+
+.teams .carousel .card .text {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px 0 7px 0;
+}
+
+.teams .carousel .card img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid crimson;
+  transition: all 0.3s ease;
+}
+
+.teams .carousel .card:hover img {
+  border-color: #fff;
+}
+
+/* TEAMS SECTION END  */
 
 /* RESPONSIVE MEDAI QUERY START */
 @media (max-width: 1300px) {
