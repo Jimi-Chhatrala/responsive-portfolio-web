@@ -141,7 +141,8 @@ section {
 .services,
 .skills,
 .teams,
-.contact {
+.contact,
+footer {
   font-family: "Poppins", sans-serif;
 }
 
@@ -559,6 +560,24 @@ section .title::after {
 }
 
 /* CONTACT SECTION END  */
+
+/* FOOTER SECTION START  */
+footer {
+  background: #111;
+  padding: 20px 23px;
+  color: #fff;
+  text-align: center;
+}
+
+footer span a {
+  color: crimson;
+  text-decoration: none;
+}
+footer span a:hover {
+  color: crimson;
+  text-decoration: underline;
+}
+/* FOOTER SECTION END  */
 
 /* RESPONSIVE MEDAI QUERY START */
 @media (max-width: 1300px) {
