@@ -957,3 +957,11 @@ footer span a:hover {
 }
 
 /* RESPONSIVE MEDAI QUERY END */
+
+/* ********************* CSS FOR SMALL SCREEN END ******************* */
+
+#msg {
+  color: #61b752;
+  margin-top: 15px;
+  display: block;
+}

@@ -377,23 +377,33 @@
           </div>
           <div class="column right">
             <div class="text">Message me</div>
-            <form action="#">
+            <form name="submit-to-google-sheet">
               <div class="fields">
                 <div class="field name">
-                  <input type="text" placeholder="Name" required />
+                  <input type="text" name="Name" placeholder="Name" required />
                 </div>
 
                 <div class="field email">
-                  <input type="email" placeholder="Email" required />
+                  <input
+                    type="email"
+                    name="Email"
+                    placeholder="Email"
+                    required
+                  />
                 </div>
               </div>
               <div class="field">
-                <input type="text" placeholder="Subject" required />
+                <input
+                  type="text"
+                  name="Subject"
+                  placeholder="Subject"
+                  required
+                />
               </div>
 
               <div class="field textarea">
                 <textarea
-                  name=""
+                  name="Message"
                   id=""
                   cols="30"
                   rows="10"
@@ -406,6 +416,7 @@
                 <button type="submit">Send message</button>
               </div>
             </form>
+            <span id="msg"></span>
           </div>
         </div>
       </div>
@@ -423,5 +434,25 @@
     <!-- FOOTER SECTION END -->
 
     <script src="./script.js"></script>
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbxuhxOjV8rSrV-hNst-OIZj8JeZc12nFpz6pnIGfTor8t9Lth9_VRydMhvmS8fM3UxL/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      const msg = document.getElementById("msg");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            msg.innerHTML = "Message sent successfully.";
+            setTimeout(function () {
+              msg.innerHTML = "";
+            }, 5000);
+            form.reset();
+          })
+          // .then((response) => console.log("Success!", response))
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
   </body>
 </html>
