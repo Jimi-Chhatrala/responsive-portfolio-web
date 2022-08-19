@@ -1,3 +1,7 @@
+:root {
+  --blue: #61dbfb;
+}
+
 /*  import google fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
 
@@ -58,6 +62,7 @@ html {
 }
 
 .navbar .menu li a {
+  display: block;
   color: #fff;
   font-size: 18px;
   font-weight: 500;
@@ -104,17 +109,42 @@ html {
 
 /* HOME SECTION START  */
 
+.scroll-up-btn {
+  position: fixed;
+  height: 45px;
+  width: 42px;
+  background: crimson;
+  right: 30px;
+  bottom: 10px;
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+  z-index: 999;
+  font-size: 30px;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.scroll-up-btn.show {
+  bottom: 30px;
+  opacity: 1;
+  pointer-events: auto;
+}
 .home {
   display: flex;
-  background: url("./images/banner.jpg") no-repeat center;
+  background: rgba(0, 0, 0, 0.7) url("./images/banner.jpg") no-repeat center;
   height: 100vh;
   color: #fff;
   min-height: 500px;
   font-family: "Ubuntu", sans-serif;
-
+  background-blend-mode: darken;
   background-size: cover;
   background-attachment: fixed;
 }
+
 .home .max-width {
   margin: auto 0 auto 40px;
 }
@@ -302,7 +332,8 @@ section .title::after {
   text-align: justify;
 }
 
-.about .about-content .right a {
+.about .about-content .right a,
+.cv-button {
   display: inline-block;
   background: crimson;
   color: #fff;
@@ -314,7 +345,8 @@ section .title::after {
   border: 2px solid crimson;
   transition: all 0.3s ease;
 }
-.about .about-content .right a:hover {
+.about .about-content .right a:hover,
+.cv-button:hover {
   color: crimson;
   background: none;
 }
